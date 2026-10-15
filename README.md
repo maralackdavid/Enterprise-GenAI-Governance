@@ -19,36 +19,6 @@
 
 ---
 
-## Quickstart (Prototype)
-
-**Prerequisites**: AWS Organization with management account, AWS CDK v2 + Node 18, OPA CLI, IAM Identity Center enabled, Python 3.11 + Poetry (for the AWS sample).
-
-```bash
-# ── Stage 1: Deploy AWS's enforcement plane (adopted, not rebuilt) ──────────
-git clone https://github.com/aws-samples/sample-guidance-for-governed-inference-platform-on-amazon-bedrock
-cd sample-guidance-for-governed-inference-platform-on-amazon-bedrock/source
-poetry install
-poetry run gip init      # interactive: OIDC provider, model, region
-poetry run gip deploy    # inference gateway, SSO federation, budgets, metering
-
-# ── Stage 2: Deploy this project's strategy/control layer on top ────────────
-git clone https://github.com/maralackdavid/enterprise-genai-governance-control-plane.git
-cd enterprise-genai-governance-control-plane
-npm install
-# edit cdk.json (management account ID, home region, risk tiers)
-npx cdk deploy ControlPlaneStack --profile gov-admin
-
-# Register your first AI use case in the risk registry
-./scripts/register-use-case.sh --name support-copilot --tier limited-risk --owner bu-support
-
-# Run the policy gate + adversarial guardrail evaluation
-./scripts/eval-guardrails.sh --corpus tests/adversarial-500.jsonl
-```
-
-**Expected result**: the AWS platform enforces identity, budgets, and metering below the app layer; this control plane adds registry-gated policy checks — unregistered Bedrock calls are denied, and the adversarial corpus runs against Bedrock Guardrails with precision/recall reported.
-
----
-
 ## 1. Investment Strategy & Selection
 
 *This section states each framework once. The delivery lifecycle (§2) applies them at phase gates instead of re-defining them.*
