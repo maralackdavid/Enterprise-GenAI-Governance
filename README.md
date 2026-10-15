@@ -71,28 +71,28 @@
 *Each phase applies the §1 strategy at its gate; framework definitions are not repeated here.*
 
 #### Phase I: Business Understanding
-Applied §1.1–§1.3 filters → **Gate 1 GO**. Defined audience-tailored KPIs (see §3.2). Chartered the AI Governance Board; drafted RACI (see §5).
-**Gate 1 Milestone**: Business Case & Go/No-Go Sign-off.
+- Applied §1.1–§1.3 filters → **Gate 1 GO**. Defined audience-tailored KPIs (see §3.2). Chartered the AI Governance Board; drafted RACI (see §5).
+- **Gate 1 Milestone**: Business Case & Go/No-Go Sign-off.
 
 #### Phase II: Data Understanding & Security Mapping
-Inventoried existing AI usage (survey + CloudTrail analysis) — the "shadow AI census." Mapped data classifications to risk tiers. Captured pre-launch baselines (see §3.1).
-**Gate 2 Milestone**: AI Inventory, Data Classification & Privacy Approval.
+- Inventoried existing AI usage (survey + CloudTrail analysis) — the "shadow AI census." Mapped data classifications to risk tiers. Captured pre-launch baselines (see §3.1).
+- **Gate 2 Milestone**: AI Inventory, Data Classification & Privacy Approval.
 
 #### Phase III: Data Preparation & Policy Authoring
-Authored OPA/Rego policy library (risk-tier rules, region restrictions, budget caps). Built the risk-registry schema (DynamoDB). Established FinOps tagging standards (`ai-use-case-id` on all Bedrock calls).
-**Milestone**: Policy library v1 passing Conftest in CI.
+- Authored OPA/Rego policy library (risk-tier rules, region restrictions, budget caps). Built the risk-registry schema (DynamoDB). Established FinOps tagging standards (`ai-use-case-id` on all Bedrock calls).
+- **Milestone**: Policy library v1 passing Conftest in CI.
 
 #### Phase IV: Control Plane Development & Cloud Architecture
-Deployed the AWS Governed Inference Platform sample (Stage 1), then built this project's §4 control plane on top: registry portal, CI/CD policy gates, PrivateLink-only Bedrock access, immutable audit pipeline, kill-switch SCPs. Executed the §1.4 TCO decision → **Adopt + Build track**.
-**Milestone**: Staging control plane governing a sandbox OU.
+- Deployed the AWS Governed Inference Platform sample (Stage 1), then built this project's §4 control plane on top: registry portal, CI/CD policy gates, PrivateLink-only Bedrock access, immutable audit pipeline, kill-switch SCPs. Executed the §1.4 TCO decision → **Adopt + Build track**.
+- **Milestone**: Staging control plane governing a sandbox OU.
 
 #### Phase V: Evaluation & Financial Validation
-Ran prototype benchmarks (see §5) and the §3.3 ROI model against Gate 3 thresholds. Adversarial red-team exercise against guardrails.
-**Gate 3 Milestone**: Financial Payback & Control-Effectiveness Sign-off.
+- Ran prototype benchmarks (see §5) and the §3.3 ROI model against Gate 3 thresholds. Adversarial red-team exercise against guardrails.
+- **Gate 3 Milestone**: Financial Payback & Control-Effectiveness Sign-off.
 
 #### Phase VI: Operationalization & Portfolio Governance
-Phased rollout: pilot BU → enterprise (see §5). Continuous assurance: quarterly risk-tier reviews, annual model-risk reassessment. Portfolio classification per use case: **Scale** / Pause / Terminate.
-**Gate 4 Milestone**: Active Portfolio Governance sign-off.
+- Phased rollout: pilot BU → enterprise (see §5). Continuous assurance: quarterly risk-tier reviews, annual model-risk reassessment. Portfolio classification per use case: **Scale** / Pause / Terminate.
+- **Gate 4 Milestone**: Active Portfolio Governance sign-off.
 
 ---
 
